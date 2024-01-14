@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: publish
-        uses: /.github/composite-actions/publish@main
+        uses: anton-nagornyi/anyit-messenger/.github/composite-actions/publish@main
         with:
           working-directory: packages/template-actor-dto
           npm-auth-token: ${{ secrets.NPM_AUTH_TOKEN }}
