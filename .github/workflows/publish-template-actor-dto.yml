@@ -1,0 +1,14 @@
+name: Publish Template-actor-dto
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        uses: /.github/composite-actions/publish@main
+        with:
+          working-directory: packages/template-actor-dto
+          npm-auth-token: ${{ secrets.NPM_AUTH_TOKEN }}

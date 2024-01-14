@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "anyit-messanger",
+  "license": "MIT",
+  "author": "Anton Nagornyi",
+  "homepage": "https://github.com/anton-nagornyi/anyit-messenger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anton-nagornyi/anyit-messenger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anton-nagornyi/anyit-messenger/issues"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@anyit/be-dev": "^1.0.42"
+  },
+  "packageManager": "yarn@4.0.2"
+}
