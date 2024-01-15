@@ -33,9 +33,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@anyit/be-dev@npm:^1.0.42":
-  version: 1.0.42
-  resolution: "@anyit/be-dev@npm:1.0.42"
+"@anyit/be-dev@npm:^1.0.44":
+  version: 1.0.44
+  resolution: "@anyit/be-dev@npm:1.0.44"
   dependencies:
     "@rollup/plugin-typescript": "npm:^11.1.5"
     "@types/node": "npm:^20.10.5"
@@ -76,7 +76,7 @@ __metadata:
     rollup: ./bin/proxy-rollup.js
     test: ./bin/test.js
     "version:bump": ./bin/version-bump.js
-  checksum: dbf3b7207eeae974ed157d204892842b0853c37118cfd25724293ce40b1435ff65050a30c059523361add5762cd3d4bf8ed65158b713f05d136bee6cbff44504
+  checksum: b952fcf6fe0decdff4770cb7cb40c1ab3b895c60f79ad930b2f29dd7e869286425b28ccd2f5950bbc20c950446114482e7fd31eb6bf0cdf16fa5c95824afc02d
   languageName: node
   linkType: hard
 
@@ -85,7 +85,7 @@ __metadata:
   resolution: "@anyit/email-sender-actor@workspace:packages/email-sender-actor"
   dependencies:
     "@anyit/actor": "npm:^1.0.11"
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/email-sender-dto": "workspace:*"
     "@anyit/message-handling": "npm:^1.0.3"
     "@anyit/messaging": "npm:^1.0.3"
@@ -105,7 +105,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@anyit/email-sender-dto@workspace:packages/email-sender-dto"
   dependencies:
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/messaging": "npm:^1.0.3"
     jest: "npm:^29.7.0"
   peerDependencies:
@@ -137,7 +137,7 @@ __metadata:
   resolution: "@anyit/messenger-actor@workspace:packages/messanger-actor"
   dependencies:
     "@anyit/actor": "npm:^1.0.11"
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/message-handling": "npm:^1.0.3"
     "@anyit/messaging": "npm:^1.0.3"
     "@anyit/messenger-dto": "workspace:*"
@@ -155,7 +155,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@anyit/messenger-dto@workspace:packages/messanger-dto"
   dependencies:
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/messaging": "npm:^1.0.3"
     jest: "npm:^29.7.0"
   peerDependencies:
@@ -167,7 +167,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@anyit/template-actor-dto@workspace:packages/template-actor-dto"
   dependencies:
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/messaging": "npm:^1.0.3"
     jest: "npm:^29.7.0"
   peerDependencies:
@@ -180,7 +180,7 @@ __metadata:
   resolution: "@anyit/template-actor@workspace:packages/template-actor"
   dependencies:
     "@anyit/actor": "npm:^1.0.11"
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
     "@anyit/message-handling": "npm:^1.0.3"
     "@anyit/messaging": "npm:^1.0.3"
     "@anyit/template-actor-dto": "workspace:^"
@@ -1641,7 +1641,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "anyit-messanger@workspace:."
   dependencies:
-    "@anyit/be-dev": "npm:^1.0.42"
+    "@anyit/be-dev": "npm:^1.0.44"
   languageName: unknown
   linkType: soft
 
