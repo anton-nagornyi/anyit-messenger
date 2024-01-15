@@ -76,6 +76,6 @@ runs:
         pwd
         echo -------------
         yarn build
-        cat ./index.d.ts
+        cat ./dist/index.d.ts
         exit -1
         yarn npm publish --access=public
