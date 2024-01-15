@@ -73,9 +73,17 @@ runs:
         NPM_AUTH_TOKEN: ${{inputs.npm-auth-token}}
       run: |
         set +e
+        pwd
+        echo -------------
         yarn build
         ls ./dist
         echo ===================
         ls ./dist/@types/packages
+        echo ===================
+        ls ./dist/@types/packages/template-actor
+        echo ===================
+        ls ./dist/@types/packages/template-actor-dto
+        echo ===================
+        cat ./index.ts
         exit -1
         yarn npm publish --access=public
