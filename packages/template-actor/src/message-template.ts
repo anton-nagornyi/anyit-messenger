@@ -64,6 +64,7 @@ export class MessageTemplate {
     let result: RegExpExecArray | null;
     let textStart = 0;
 
+    // eslint-disable-next-line no-cond-assign
     while ((result = tokenizer.exec(template)) !== null) {
       if (result.index !== textStart) {
         tokens.push({ text: template.slice(textStart, result.index) });
