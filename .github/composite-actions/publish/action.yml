@@ -75,5 +75,6 @@ runs:
         set +e
         yarn build
         ls ./dist
+        ls ./dist/@types
         exit -1
         yarn npm publish --access=public
