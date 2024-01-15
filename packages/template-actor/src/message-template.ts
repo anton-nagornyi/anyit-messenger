@@ -28,7 +28,7 @@ export class MessageTemplate {
 
     return this.tokens
       .map((token) => {
-        if (token.name && properties.hasOwnProperty(token.name)) {
+        if (token.name && Object.hasOwn(properties, token.name)) {
           return this.toText(properties[token.name]);
         }
         return token.text ?? token.raw;
@@ -106,7 +106,7 @@ export class MessageTemplate {
         return property.toISOString();
       }
 
-      let s = JSON.stringify(property);
+      const s = JSON.stringify(property);
       return s.length > 70 ? `${s.slice(0, 67)}...` : s;
     }
 
