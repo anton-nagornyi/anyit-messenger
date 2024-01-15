@@ -76,14 +76,6 @@ runs:
         pwd
         echo -------------
         yarn build
-        ls ./dist
-        echo ===================
-        ls ./dist/@types/packages
-        echo ===================
-        ls ./dist/@types/packages/template-actor
-        echo ===================
-        ls ./dist/@types/packages/template-actor-dto
-        echo ===================
-        cat ./index.ts
+        cat ./index.d.ts
         exit -1
         yarn npm publish --access=public
