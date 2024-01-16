@@ -20,11 +20,12 @@ template or one provided in the message.
 
 #### Example:
 
-~~~
+```typescript
+import { ActorSystem } from '@anyit/actor';
 import { TemplateActor } from '@anyit/template-actor';
 
-const actor = new TemplateActor({ template: 'Your template string' });
-~~~
+const actor = ActorSystem.create(TemplateActor, { template: 'Your template string' });
+```
 
 ### MessageTemplate
 
@@ -32,13 +33,13 @@ const actor = new TemplateActor({ template: 'Your template string' });
 
 #### Example:
 
-~~~
+```typescript
 import { MessageTemplate } from 'your-library-name';
 
 const template = new MessageTemplate('Hello, {name}');
 const result = template.render({ name: 'John' });
 console.log(result); // Output: Hello, John
-~~~
+```
 
 ## API Reference
 
