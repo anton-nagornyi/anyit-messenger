@@ -10,5 +10,5 @@ jobs:
       - name: publish
         uses: anton-nagornyi/anyit-messenger/.github/composite-actions/publish@main
         with:
-          working-directory: packages/messnger-dto
+          working-directory: packages/messenger-dto
           npm-auth-token: ${{ secrets.NPM_AUTH_TOKEN }}
