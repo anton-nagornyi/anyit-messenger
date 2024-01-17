@@ -8,7 +8,7 @@ export class SendMessage extends Message {
     super(args);
     this.payload = { ...args.payload };
     this.from = { ...args.from };
-    this.to = { ...args.to };
+    this.to = [ ...args.to ];
   }
 
   readonly from: Record<string, any>;
