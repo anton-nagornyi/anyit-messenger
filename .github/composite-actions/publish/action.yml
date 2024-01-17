@@ -38,6 +38,7 @@ runs:
       working-directory: ${{inputs.working-directory}}
       shell: bash
       run: |
+        yarn workspaces foreach -R run build
         yarn test
 
     - name: Read Package Name from package.json
