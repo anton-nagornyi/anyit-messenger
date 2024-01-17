@@ -13,7 +13,7 @@ It is part of the AnyIT Messenger project.
 To install the package, run:
 
 ```bash
-npm install @anyit/template-actor-dto
+yarn add @anyit/template-actor-dto
 ```
 
 ## Usage
