@@ -8,7 +8,7 @@ It includes the `SendMessage` class which extends the `Message` class from `@any
 To install the library, run:
 
 ```shell
-yarn add messenger-dto
+yarn add @anyit/messenger-dto
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ recipient(s), and the message payload.
 #### Example:
 
 ```shell
-import { SendMessage } from 'messenger-dto';
+import { SendMessage } from '@anyit/messenger-dto';
 
 const sendMessage = new SendMessage({
   payload: { text: 'Hello world!' },
