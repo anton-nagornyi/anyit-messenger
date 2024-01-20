@@ -3,7 +3,7 @@ import { SendEmail } from '@anyit/email-sender-dto';
 import { SendMessage } from '@anyit/messenger-dto';
 import { FillTemplate } from '@anyit/template-actor-dto';
 import { ActorRef, Actor, ActorSystem } from '@anyit/actor';
-import { EmailSenderActor, MessengerActorArgs } from '../src/email-sender-actor';
+import {EmailSenderActor, EmailSenderActorArgs} from '../src/email-sender-actor';
 
 describe('Given an EmailSenderActor', () => {
   let emailSenderActor: EmailSenderActor;
@@ -18,7 +18,7 @@ describe('Given an EmailSenderActor', () => {
     htmlTemplateMock = ActorSystem.create(Actor);
     transmitterMock = ActorSystem.create(Actor);
 
-    const args: MessengerActorArgs = {
+    const args: EmailSenderActorArgs = {
       address: 'actor-address',
       templates: {
         subject: subjectTemplateMock,

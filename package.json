@@ -17,7 +17,7 @@
     ]
   },
   "devDependencies": {
-    "@anyit/be-dev": "^1.0.51"
+    "@anyit/be-dev": "^1.0.52"
   },
   "packageManager": "yarn@4.0.2"
 }

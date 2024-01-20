@@ -4,7 +4,7 @@ import { Receive } from '@anyit/message-handling';
 import { SendMessage } from '@anyit/messenger-dto';
 import { FillTemplate } from '@anyit/template-actor-dto';
 
-export type MessengerActorArgs = ActorArgs & {
+export type EmailSenderActorArgs = ActorArgs & {
   templates: {
     subject: ActorRef;
     text: ActorRef;
@@ -14,7 +14,7 @@ export type MessengerActorArgs = ActorArgs & {
 };
 
 export class EmailSenderActor extends Actor {
-  constructor(args: MessengerActorArgs) {
+  constructor(args: EmailSenderActorArgs) {
     super(args);
 
     this.subjectTemplate = args.templates.subject;
