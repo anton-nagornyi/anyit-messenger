@@ -3,7 +3,7 @@ import { SendEmail } from '@anyit/email-sender-dto';
 import { SendMessage } from '@anyit/messenger-dto';
 import { FillTemplate } from '@anyit/template-actor-dto';
 import { ActorRef, Actor, ActorSystem } from '@anyit/actor';
-import {EmailSenderActor, EmailSenderActorArgs} from '../src/email-sender-actor';
+import { EmailSenderActor, EmailSenderActorArgs } from '../src/email-sender-actor';
 
 describe('Given an EmailSenderActor', () => {
   let emailSenderActor: EmailSenderActor;
