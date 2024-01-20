@@ -1,0 +1,14 @@
+name: Publish Email-transmitter-ses
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        uses: anton-nagornyi/anyit-messenger/.github/composite-actions/publish@main
+        with:
+          working-directory: packages/email-transmitter-ses
+          npm-auth-token: ${{ secrets.NPM_AUTH_TOKEN }}
