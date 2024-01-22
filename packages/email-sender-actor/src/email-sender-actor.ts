@@ -6,9 +6,9 @@ import { FillTemplate } from '@anyit/template-actor-dto';
 
 export type EmailSenderActorArgs = ActorArgs & {
   templates: {
-    subject: ActorRef;
-    text: ActorRef;
-    html?: ActorRef;
+    subject: ActorRef | string;
+    text: ActorRef | string;
+    html?: ActorRef | string | null;
   };
   transmitter: ActorRef;
 };
@@ -23,11 +23,11 @@ export class EmailSenderActor extends Actor {
     this.transmitter = args.transmitter;
   }
 
-  private readonly subjectTemplate: ActorRef;
+  private readonly subjectTemplate: ActorRef | string;
 
-  private readonly textTemplate: ActorRef;
+  private readonly textTemplate: ActorRef | string;
 
-  private readonly htmlTemplate?: ActorRef;
+  private readonly htmlTemplate?: ActorRef | string | null;
 
   private readonly transmitter: ActorRef;
 
@@ -36,10 +36,14 @@ export class EmailSenderActor extends Actor {
     const to = sendMessage.to.map(({ email }) => email as string);
 
     const data = {};
-    const subject = await this.fillTemplate(this.subjectTemplate, data);
-    const text = await this.fillTemplate(this.textTemplate, data);
+    const subject = typeof this.subjectTemplate === 'string'
+      ? this.subjectTemplate
+      : await this.fillTemplate(this.subjectTemplate, data);
+    const text = typeof this.textTemplate === 'string'
+      ? this.textTemplate
+      : await this.fillTemplate(this.textTemplate, data);
     const html = this.htmlTemplate
-      ? await this.fillTemplate(this.htmlTemplate, data)
+      ? typeof this.htmlTemplate === 'string' ? this.htmlTemplate : await this.fillTemplate(this.htmlTemplate, data)
       : undefined;
 
     const { error } = await this.transmitter.ask(

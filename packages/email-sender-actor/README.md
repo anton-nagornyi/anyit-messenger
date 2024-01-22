@@ -58,9 +58,9 @@ emailSenderActor.tell(sendMessage);
     - Arguments:
         - `args: MessengerActorArgs` - Arguments for creating an EmailSenderActor object.
     - Properties:
-        - `subjectTemplate: ActorRef` - Actor for subject template rendering.
-        - `textTemplate: ActorRef` - Actor for text body template rendering.
-        - `htmlTemplate: ActorRef` - Optional actor for HTML body template rendering.
+        - `subjectTemplate: ActorRef | string` - Actor for subject template rendering.
+        - `textTemplate: ActorRef | string` - Actor for text body template rendering.
+        - `htmlTemplate: ActorRef | string` - Optional actor for HTML body template rendering.
         - `transmitter: ActorRef` - Actor for transmitting the email.
 - **sendEmail**
     - Method to process `SendMessage` messages and send emails.
