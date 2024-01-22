@@ -5,9 +5,11 @@ import { SendMessage } from '@anyit/messenger-dto';
 const isActorRef = (obj?: any): obj is ActorRef =>
   Boolean(obj && obj.tell);
 
+type Resolver = ((message: SendMessage) => Promise<string>) | ActorRef;
+
 export type MessengerActorArgs = ActorArgs & {
-  resolvers: ActorRef[];
-  senders: (ActorRef | { sender: ActorRef; resolvers: ActorRef[] })[];
+  resolvers: Resolver[];
+  senders: (ActorRef | { sender: ActorRef; resolvers: Resolver[] })[];
 };
 
 export class MessengerActor extends Actor {
@@ -32,7 +34,7 @@ export class MessengerActor extends Actor {
 
   private readonly senderResolvers: {
     sender: ActorRef;
-    resolvers: ActorRef[];
+    resolvers: Resolver[];
   }[] = [];
 
   async sendMessage(@Receive sendMessage: SendMessage) {
@@ -47,10 +49,14 @@ export class MessengerActor extends Actor {
       const { sender, resolvers } = senderWithResolvers;
 
       for (const resolver of resolvers) {
-        const { error } = await resolver.ask(message);
+        if (resolver instanceof ActorRef) {
+          const { error } = await resolver.ask(message);
 
-        if (error) {
-          throw error;
+          if (error) {
+            throw error;
+          }
+        } else {
+          await resolver(message);
         }
       }
 

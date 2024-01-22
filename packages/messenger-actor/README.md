@@ -29,7 +29,10 @@ const sender: ActorRef = ActorSystem.create(Actor);
 const resolver: ActorRef = ActorSystem.create(Actor);
 
 const messenger = ActorSystem.create(MessengerActor, {
-  resolvers: [resolver],
+  resolvers: [resolver, (message: SendMessage) => {
+    message.payload.data = 'ok';
+    return Promise.resolve();
+  }],
   senders: [sender]
 });
 

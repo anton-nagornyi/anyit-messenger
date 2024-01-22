@@ -31,7 +31,7 @@ describe('Given a MessengerActor', () => {
     describe('And when sendMessage is called', () => {
       const sendMessageData = new SendMessage({
         from: { id: 1 },
-        to: { id: 1 },
+        to: [{ id: 1 }],
         payload: { some: 'data' },
       });
 
