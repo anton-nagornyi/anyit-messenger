@@ -5,7 +5,7 @@ import { SendMessage } from '@anyit/messenger-dto';
 const isActorRef = (obj?: any): obj is ActorRef =>
   Boolean(obj && obj.tell);
 
-type Resolver = ((message: SendMessage) => Promise<string>) | ActorRef;
+type Resolver = ((message: SendMessage) => Promise<void> | void) | ActorRef;
 
 export type MessengerActorArgs = ActorArgs & {
   resolvers: Resolver[];
