@@ -35,7 +35,7 @@ export class EmailSenderActor extends Actor {
     const { email: from } = sendMessage.from;
     const to = sendMessage.to.map(({ email }) => email as string);
 
-    const data = {};
+    const data = sendMessage.payload;
     const subject = typeof this.subjectTemplate === 'string'
       ? this.subjectTemplate
       : await this.fillTemplate(this.subjectTemplate, data);
@@ -67,6 +67,7 @@ export class EmailSenderActor extends Actor {
     const { reason, error } = await actor.ask(
       new FillTemplate({
         data,
+        sender: this.constructor.name,
       }),
     );
 

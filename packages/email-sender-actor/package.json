@@ -1,6 +1,6 @@
 {
   "name": "@anyit/email-sender-actor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Anton Nagornyi",
   "homepage": "https://github.com/anton-nagornyi/anyit-messenger/blob/main/packages/email-sender-actor/README.md",
